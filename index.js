@@ -101,25 +101,21 @@ class Esbuild {
                 },
             },
             react: {
-                dependencies: ["html-webpack-plugin"],
                 options: {
                     loader: "jsx",
                 },
                 plugins: () => [
-                    new (require("html-webpack-plugin"))(),
                     new ProvidePlugin({
                         React: "react",
                     }),
                 ],
             },
             "react-tsx": {
-                dependencies: ["html-webpack-plugin"],
                 removeTsLoader: true,
                 options: {
                     loader: "tsx",
                 },
                 plugins: () => [
-                    new (require("html-webpack-plugin"))(),
                     new ProvidePlugin({
                         React: "react",
                     }),
